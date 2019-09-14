@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 import youtube_dl
+import ffmpeg
+
 
 url = raw_input("Enter youtube URL: ")
 
@@ -14,19 +16,20 @@ ydl = youtube_dl.YoutubeDL({
     'quiet': False
     })
 
+result = {}
+
 with ydl:
     result = ydl.extract_info(
-        'http://www.youtube.com/watch?v=BaW_jenozKc',
+        #'http://www.youtube.com/watch?v=BaW_jenozKc',
+        url,
         download=True # We just want to extract the info
     )
 
-# if 'entries' in result:
-#     # Can be a playlist or a list of videos
-#     video = result['entries'][0]
-# else:
-#     # Just a video
-#     video = result
+#Convert from stereo to mono    
+# from pydub import AudioSegment
+# sound = AudioSegment.from_wav("./" + re.match("*.wav"))
+# sound = sound.set_channels(1)
+# sound.export("./" + "mono" + re.match("*.wav"), format="wav")
+# print(result['']);
 
-# print(video)
-# video_url = video['url']
-#print(video_url)
+
