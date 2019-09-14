@@ -16,7 +16,7 @@ ydl = youtube_dl.YoutubeDL({
 
 with ydl:
     result = ydl.extract_info(
-        'http://www.youtube.com/watch?v=BaW_jenozKc',
+        url,
         download=True # We just want to extract the info
     )
 
