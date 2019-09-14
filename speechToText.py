@@ -13,7 +13,7 @@ client = speech.SpeechClient()
 file_name = os.path.join(
     os.path.dirname('~'),
     '',
-    'youtube-dl test video.wav')
+    'short.wav')
 
 # Loads the audio into memory
 with io.open(file_name, 'rb') as audio_file:
