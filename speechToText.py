@@ -12,7 +12,7 @@ client = speech.SpeechClient()
 # The name of the audio file to transcribe
 file_name = os.path.join(
     os.path.dirname('~'),
-    '',
+    'resources',
     'short.wav')
 
 # Loads the audio into memory
@@ -31,3 +31,4 @@ response = client.recognize(config, audio)
 for result in response.results:
     print('Transcript: {}'.format(result.alternatives[0].transcript))
 
+    
